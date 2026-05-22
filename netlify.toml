@@ -1,0 +1,62 @@
+[build]
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/api/posts"
+  to = "/.netlify/functions/posts"
+  status = 200
+
+[[redirects]]
+  from = "/api/post"
+  to = "/.netlify/functions/post"
+  status = 200
+
+[[redirects]]
+  from = "/blog"
+  to = "/blog.html"
+  status = 200
+
+[[redirects]]
+  from = "/about"
+  to = "/about.html"
+  status = 200
+
+[[redirects]]
+  from = "/freebies"
+  to = "/freebies.html"
+  status = 200
+
+[[redirects]]
+  from = "/newsletter"
+  to = "/newsletter.html"
+  status = 200
+
+[[redirects]]
+  from = "/article"
+  to = "/article.html"
+  status = 200
+
+[[redirects]]
+  from = "/podcast"
+  to = "/podcast.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[redirects]]
+  from = "/contact"
+  to = "/contact.html"
+  status = 200
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[plugins]]
+
+[template.environment]
+  CK_API_SECRET = "Your ConvertKit API secret"

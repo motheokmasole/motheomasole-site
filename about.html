@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Motheo Masole</title>
+  <meta name="description" content="I'm Motheo — a Motswana Mechanical Engineering student, writing about personal development, confidence and intentional living.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <style>
+    .why-section {
+      padding: 5rem 2rem;
+      background: var(--accent-dark);
+      color: white;
+    }
+    .why-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .why-image-wrap {
+      position: relative;
+    }
+    .why-image-wrap img {
+      width: 100%;
+      border-radius: var(--radius);
+      box-shadow: 0 24px 64px rgba(0,0,0,0.3);
+    }
+    .why-image-caption {
+      position: absolute;
+      bottom: -1rem;
+      left: 1.5rem;
+      background: var(--accent);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+    }
+    .why-content .section-label { color: var(--accent); }
+    .why-content .section-title { color: white; margin-bottom: 1.5rem; }
+    .why-content p {
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+    .why-content p strong { color: white; }
+    @media (max-width: 900px) {
+      .why-inner { grid-template-columns: 1fr; gap: 3rem; }
+    }
+  </style>
+</head>
+<body data-page="about">
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Motheo Masole" style="border-radius:50%;"></a>
+            <ul class="nav-links">
+        <li><a href="blog.html">Articles</a></li>
+        <li><a href="podcast.html">Podcast</a></li>
+        <li><a href="freebies.html">Freebies</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="newsletter.html" class="nav-cta">Newsletter</a></li>
+      </ul>
+      <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- ABOUT HERO -->
+  <section class="about-section container" style="padding-top:5rem;">
+    <div class="about-image-wrap fade-up scroll-fade">
+      <img src="images/motheo-dark.jpg" alt="Motheo Masole" class="scroll-parallax">
+      <div class="about-stat-card">
+        <div class="about-stat-number">Bath</div>
+        <div class="about-stat-label">University of Bath, UK</div>
+      </div>
+    </div>
+    <div class="about-content fade-up">
+      <span class="section-label">My Story</span>
+      <h1 class="section-title" style="margin-bottom:1.5rem;">Hi, I'm Motheo.</h1>
+      <p>I'm originally from Botswana and now studying Mechanical Engineering at the University of Bath. Coming here was a dream of mine for years — but once I arrived, I faced something I didn't expect: the challenge of finding my purpose.</p>
+      <p>For a while, I put my values in the wrong things and lost sight of why I was actually in the UK — my family, personal growth, and the dreams I'd carried with me for so long.</p>
+      <p>Over time, I've had to learn to slow down. To appreciate the fact that I'm in the place I once prayed to be in. To be more patient with myself than I thought I needed to be. And to understand that sometimes a successful week is just making your bed, doing laundry, and eating proper meals.</p>
+      <p>One lesson I keep relearning is that I have to believe in myself. Confidence doesn't arrive all at once — it grows through small, healthy habits that keep me steady even when motivation dips.</p>
+      <a href="newsletter.html" class="btn-primary" style="margin-top:0.5rem;">Join WILIOM Wednesdays →</a>
+    </div>
+  </section>
+
+  <!-- MY WHY — with photo -->
+  <section class="why-section">
+    <div class="why-inner">
+      <div class="why-image-wrap fade-up scroll-fade">
+        <img src="images/why.jpg" class="scroll-parallax" alt="Motheo with children at Tlhabologo Primary School, Botswana">
+        <span class="why-image-caption">Tlhabologo Primary School, Botswana</span>
+      </div>
+      <div class="why-content fade-up">
+        <span class="section-label">My Why</span>
+        <h2 class="section-title">The day that changed everything</h2>
+        <p>My deeper why goes back to Botswana — to a day at Tlhabologo Primary School that I'll never forget. I was tutoring there, and when I asked the kids what they wanted to be when they grew up, their answers stopped me in my tracks.</p>
+        <p>Some said they wanted to <strong>play with their mum</strong>. Others said they wanted to <strong>visit a water park</strong>, or simply <strong>eat a good meal every day</strong>. Dreams so simple, yet so powerful — things I had grown up taking for granted.</p>
+        <p>That day, I realised that the dreams I carried weren't just ambitions — they were <strong>blessings</strong>. And from then on, my dream became more than chasing my own goals. It became about helping others believe in themselves too, and giving as many kids as possible the chance to dream big.</p>
+        <p>That's why I write. That's why I show up every Wednesday.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter-section">
+    <div class="newsletter-inner">
+      <span class="section-label">Every Wednesday</span>
+      <h2 class="section-title">WILIOM Wednesdays</h2>
+      <p class="section-desc">One-minute lessons on student life, productivity and personal growth. Free, always.</p>
+      <form class="newsletter-form">
+        <input type="email" class="newsletter-input" placeholder="Your email address" required>
+        <button class="btn-primary" type="submit">Join the newsletter</button>
+      </form>
+      <p class="newsletter-success">🎉 You're in! Check your inbox to confirm.</p>
+      <p class="newsletter-note">No spam. Unsubscribe anytime.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <a href="index.html" class="footer-logo"><img src="images/logo.png" alt="Motheo Masole" style="border-radius:50%;"></a>
+            <ul class="footer-links">
+        <li><a href="blog.html">Articles</a></li>
+        <li><a href="podcast.html">Podcast</a></li>
+        <li><a href="freebies.html">Freebies</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="newsletter.html">Newsletter</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+        <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+      </ul>
+      <span class="footer-copy">© 2026 Motheo Masole</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

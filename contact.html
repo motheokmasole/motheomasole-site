@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Motheo Masole</title>
+  <meta name="description" content="Get in touch with Motheo — for podcast guests, collaborations, or just to say hello.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <style>
+    .contact-page {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 5rem 2rem 6rem;
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .contact-intro { position: sticky; top: 100px; }
+    .contact-intro h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 3.5vw, 3rem);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+    }
+    .contact-intro h1 em { font-style: italic; color: var(--accent); }
+    .contact-intro p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+
+    /* ── FORM ── */
+    .contact-form-wrap {}
+    .form-group { margin-bottom: 1.25rem; }
+    .form-label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: 0.03em;
+      margin-bottom: 0.5rem;
+    }
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: white;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--text-primary);
+      outline: none;
+      transition: border-color 0.2s;
+      -webkit-appearance: none;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--accent);
+    }
+    .form-input::placeholder, .form-textarea::placeholder {
+      color: var(--text-muted);
+    }
+    .form-select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236B6B6B' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+      cursor: pointer;
+    }
+    .form-textarea {
+      resize: vertical;
+      min-height: 140px;
+      line-height: 1.6;
+    }
+    .form-submit {
+      width: 100%;
+      padding: 1rem;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      margin-top: 0.5rem;
+    }
+    .form-submit:hover { background: var(--accent-dark); transform: translateY(-1px); }
+    .form-submit:disabled { background: var(--text-muted); cursor: not-allowed; transform: none; }
+
+    /* Success state */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 3rem 2rem;
+      background: var(--accent-light);
+      border-radius: var(--radius);
+      border: 1.5px solid var(--accent);
+    }
+    .form-success .success-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .form-success h3 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+      color: var(--text-primary);
+    }
+    .form-success p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
+
+    @media (max-width: 720px) {
+      .contact-page { grid-template-columns: 1fr; gap: 3rem; }
+      .contact-intro { position: static; }
+    }
+  </style>
+</head>
+<body data-page="contact">
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Motheo Masole" style="border-radius:50%;"></a>
+      <ul class="nav-links">
+        <li><a href="blog.html">Articles</a></li>
+        <li><a href="podcast.html">Podcast</a></li>
+        <li><a href="freebies.html">Freebies</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="newsletter.html" class="nav-cta">Newsletter</a></li>
+      </ul>
+      <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="contact-page">
+
+    <!-- LEFT: INTRO -->
+    <div class="contact-intro fade-up">
+      <span class="section-label">Get in touch</span>
+      <h1>Let's <em>connect</em></h1>
+      <p>I love hearing from people who feel like they're meant for more — who are asking bigger questions about who they're becoming and how they want to live.</p>
+      <p>Whether you want to be on the podcast, collaborate on something, or just reach out — my inbox is open.</p>
+    </div>
+
+    <!-- RIGHT: FORM -->
+    <div class="contact-form-wrap fade-up">
+
+      <!-- Netlify Form — data-netlify="true" captures submissions automatically -->
+      <form
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        id="contact-form"
+      >
+        <!-- Hidden fields required by Netlify -->
+        <input type="hidden" name="form-name" value="contact">
+        <p style="display:none;"><input name="bot-field"></p>
+
+        <div class="form-group">
+          <label class="form-label" for="name">Your name</label>
+          <input class="form-input" type="text" id="name" name="name" placeholder="First and last name" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="email">Email address</label>
+          <input class="form-input" type="email" id="email" name="email" placeholder="you@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="enquiry">What's this about?</label>
+          <select class="form-select" id="enquiry" name="enquiry" required>
+            <option value="" disabled selected>Select an enquiry type</option>
+            <option value="podcast-guest">Podcast guest</option>
+            <option value="collaboration">Collaboration</option>
+            <option value="general">General / just saying hello</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="message">Your message</label>
+          <textarea class="form-textarea" id="message" name="message" placeholder="Tell me a bit about yourself and what you'd like to connect about…" required></textarea>
+        </div>
+
+        <button class="form-submit" type="submit">Send message →</button>
+      </form>
+
+      <!-- Success message (shown after submit) -->
+      <div class="form-success" id="form-success">
+        <div class="success-icon">🙌</div>
+        <h3>Message sent!</h3>
+        <p>Thanks for reaching out. I read every message personally and will get back to you as soon as I can.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <a href="index.html" class="footer-logo"><img src="images/logo.png" alt="Motheo Masole" style="border-radius:50%;"></a>
+      <ul class="footer-links">
+        <li><a href="blog.html">Articles</a></li>
+        <li><a href="podcast.html">Podcast</a></li>
+        <li><a href="freebies.html">Freebies</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="newsletter.html">Newsletter</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <span class="footer-copy">© 2026 Motheo Masole</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Handle form submission with nice success state
+    const form = document.getElementById('contact-form');
+    const success = document.getElementById('form-success');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('.form-submit');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+
+      try {
+        const data = new FormData(form);
+        await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(data).toString()
+        });
+        form.style.display = 'none';
+        success.style.display = 'block';
+      } catch {
+        btn.textContent = 'Something went wrong — try again';
+        btn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
