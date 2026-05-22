@@ -1,6 +1,9 @@
 [build]
   functions = "netlify/functions"
 
+[build.environment]
+  NODE_VERSION = "18"
+
 [[redirects]]
   from = "/api/posts"
   to = "/.netlify/functions/posts"
@@ -41,22 +44,14 @@
   to = "/podcast.html"
   status = 200
 
+[[redirects]]
+  from = "/contact"
+  to = "/contact.html"
+  status = 200
+
 [[headers]]
   for = "/*"
   [headers.values]
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-
-[[redirects]]
-  from = "/contact"
-  to = "/contact.html"
-  status = 200
-
-[build.environment]
-  NODE_VERSION = "18"
-
-[[plugins]]
-
-[template.environment]
-  CK_API_SECRET = "Your ConvertKit API secret"
