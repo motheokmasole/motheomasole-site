@@ -1,4 +1,4 @@
-const CK_API_SECRET = process.env.CK_API_SECRET || 'kit_ed9a693286ebf99bd1e93d5e6b4f7256';
+const CK_API_SECRET = process.env.CK_API_SECRET;
 const CK_API_BASE = 'https://api.convertkit.com/v3';
 
 exports.handler = async (event) => {
