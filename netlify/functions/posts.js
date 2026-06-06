@@ -7,6 +7,8 @@ exports.handler = async (event) => {
       {
         headers: {
           'Authorization': `Bearer ${process.env.C_API_SECRET}`,
+          'X-Kit-Api-Key': process.env.C_API_SECRET,
+          'Accept': 'application/json',
           'Content-Type': 'application/json'
         }
       }
