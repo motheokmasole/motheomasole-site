@@ -6,10 +6,8 @@ exports.handler = async (event) => {
       `https://api.kit.com/v4/broadcasts?page=${page}&per_page=9&status=published`,
       {
         headers: {
-          'Authorization': `Bearer ${process.env.C_API_SECRET}`,
           'X-Kit-Api-Key': process.env.C_API_SECRET,
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
+          'Accept': 'application/json'
         }
       }
     );
@@ -20,6 +18,6 @@ exports.handler = async (event) => {
       body: JSON.stringify(data)
     };
   } catch (err) {
-    return { statusCode: 500, body: JSON.stringify({ error: 'Failed to fetch posts' }) };
+    return { statusCode: 500, body: JSON.stringify({ error: err.message }) };
   }
 };
