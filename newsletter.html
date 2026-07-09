@@ -1,163 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Newsletter — Motheo Masole</title>
-  <meta name="description" content="WILIOM Wednesdays — one-minute lessons on student life, productivity and personal growth, every Wednesday.">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <style>
-    .newsletter-page {
-      min-height: 80vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 5rem 2rem;
-    }
-    .newsletter-page-inner {
-      max-width: 600px;
-      width: 100%;
-      text-align: center;
-    }
-    .newsletter-page-icon {
-      width: 72px;
-      height: 72px;
-      background: var(--accent-light);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.8rem;
-      margin: 0 auto 2rem;
-    }
-    .newsletter-page h1 {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 500;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-      margin-bottom: 1rem;
-    }
-    .newsletter-page-desc {
-      color: var(--text-secondary);
-      font-size: 1.05rem;
-      line-height: 1.7;
-      margin-bottom: 2.5rem;
-    }
-    .newsletter-page-form {
-      display: flex;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
-    }
-    .newsletter-page-form input {
-      flex: 1;
-      padding: 0.9rem 1.25rem;
-      border-radius: 50px;
-      border: 1.5px solid var(--border);
-      background: white;
-      font-family: var(--font-body);
-      font-size: 0.9rem;
-      color: var(--text-primary);
-      outline: none;
-      transition: border-color 0.2s;
-    }
-    .newsletter-page-form input:focus { border-color: var(--accent); }
-    .perks {
-      margin-top: 3rem;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      text-align: left;
-    }
-    .perk {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.25rem;
-    }
-    .perk-icon { font-size: 1.25rem; margin-bottom: 0.5rem; }
-    .perk-title { font-weight: 600; font-size: 0.875rem; margin-bottom: 0.25rem; }
-    .perk-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; }
-    @media (max-width: 600px) {
-      .newsletter-page-form { flex-direction: column; }
-      .perks { grid-template-columns: 1fr; }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WILIOM Wednesdays — The Newsletter — Motheo Masole</title>
+<meta name="description" content="What I've Learned In One Minute. One idea on intentional living, every Wednesday. Free." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
 </head>
-<body data-page="newsletter">
+<body>
 
-  <nav>
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Motheo Masole" style="border-radius:50%;"></a>
-            <ul class="nav-links">
-        <li><a href="blog.html">Articles</a></li>
-        <li><a href="podcast.html">Podcast</a></li>
-        <li><a href="freebies.html">Freebies</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="newsletter.html" class="nav-cta">Newsletter</a></li>
-      </ul>
-      <button class="nav-hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
+<header class="nav" data-open="false">
+  <div class="wrap nav__inner">
+    <a class="wordmark" href="index.html">Motheo<span>.</span></a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="podcast.html">Podcast</a>
+      <a href="newsletter.html" aria-current="page">Newsletter</a>
+      <a href="about.html">Story</a>
+      <a class="nav__cta" href="newsletter.html">Subscribe</a>
+    </nav>
+    <button class="nav__toggle" aria-label="Toggle menu">Menu</button>
+  </div>
+</header>
 
-  <div class="newsletter-page">
-    <div class="newsletter-page-inner fade-up">
-      <div class="newsletter-page-icon">✉️</div>
-      <span class="section-label">Free Newsletter</span>
-      <h1>WILIOM Wednesdays</h1>
-      <p class="newsletter-page-desc">
-        <em>What I've Learned in One Minute.</em><br>
-        Every Wednesday, one honest lesson on student life, productivity or personal growth — straight to your inbox. No fluff, no filler.
-      </p>
-      <form class="newsletter-page-form" onsubmit="return false;">
-        <input type="email" placeholder="Enter your email address">
-        <button class="btn-primary" type="submit">Subscribe free →</button>
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="hero__coord reveal">WILIOM Wednesdays &middot; What I&rsquo;ve Learned In One Minute</p>
+      <h1 class="display reveal" style="max-width:15ch;">One idea. One minute. Every Wednesday.</h1>
+      <p class="lead hero__sub reveal">A short weekly letter on intentional living, productivity, and doing your twenties on purpose. Long enough to matter, short enough to finish over coffee.</p>
+
+      <form class="signup" data-signup novalidate>
+        <div class="form-row reveal">
+          <input type="text" name="first_name" placeholder="First name" autocomplete="given-name" aria-label="First name" />
+          <input type="email" name="email" placeholder="you@email.com" autocomplete="email" required aria-label="Email address" />
+          <button class="btn btn--primary" type="submit">Subscribe <span class="arrow">&rarr;</span></button>
+        </div>
+        <p class="form-note reveal">Free. No spam. Unsubscribe in one click.</p>
+        <p class="form-msg" data-state="" role="status" aria-live="polite"></p>
       </form>
-      <p style="font-size:0.75rem; color:var(--text-muted);">Free forever. No spam. Unsubscribe in one click.</p>
+    </div>
+  </section>
 
-      <div class="perks">
-        <div class="perk">
-          <div class="perk-icon">⚡</div>
-          <div class="perk-title">One minute read</div>
-          <div class="perk-desc">Short, punchy, and actually useful — no long essays.</div>
+  <section class="section section--ink" style="padding-top:0;">
+    <div class="wrap">
+      <div class="sec-head reveal" style="margin-top:clamp(3rem,6vw,5rem);">
+        <span class="label">What you get</span>
+        <h2 class="h2">Small enough to keep. Useful enough to keep opening.</h2>
+      </div>
+      <ul class="perks">
+        <li class="reveal">One clear idea each week &mdash; something to think about or try, not a wall of links.</li>
+        <li class="reveal">Written for 18&ndash;25s who are ambitious but tired of empty productivity advice.</li>
+        <li class="reveal">Under a minute to read. That&rsquo;s the whole promise, and it&rsquo;s in the name.</li>
+        <li class="reveal">Honest and mid-journey &mdash; what&rsquo;s actually working for me, not recycled guru takes.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--panel">
+    <div class="wrap" style="text-align:center; display:grid; gap:1.75rem; justify-items:center;">
+      <span class="label label--plain reveal">Prefer to listen?</span>
+      <h2 class="h2 reveal" style="max-width:18ch;">The letter&rsquo;s the short form. The podcast is the long one.</h2>
+      <div class="reveal">
+        <a class="btn btn--ghost" href="podcast.html">Explore the podcast <span class="arrow">&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a class="wordmark" href="index.html">Motheo<span>.</span></a>
+        <p class="footer__tag">A podcast and weekly letter about doing your twenties on purpose.</p>
+      </div>
+      <div class="footer__cols">
+        <div class="footer__col">
+          <h4>Explore</h4>
+          <a href="podcast.html">Podcast</a>
+          <a href="newsletter.html">Newsletter</a>
+          <a href="about.html">Story</a>
         </div>
-        <div class="perk">
-          <div class="perk-icon">📬</div>
-          <div class="perk-title">Every Wednesday</div>
-          <div class="perk-desc">Consistent and reliable — arrives the same time each week.</div>
-        </div>
-        <div class="perk">
-          <div class="perk-icon">🎯</div>
-          <div class="perk-title">Real lessons</div>
-          <div class="perk-desc">Honest reflections from my own life — not recycled advice.</div>
+        <div class="footer__col">
+          <h4>Elsewhere</h4>
+          <a href="https://open.spotify.com/show/1bjxn4ApzX3vl7Ld07ZK2I" target="_blank" rel="noopener">Spotify</a>
+          <a href="mailto:motheo@motheomasole.com">Email</a>
         </div>
       </div>
     </div>
-  </div>
-
-  <footer>
-    <div class="footer-inner">
-      <a href="index.html" class="footer-logo"><img src="images/logo.png" alt="Motheo Masole" style="border-radius:50%;"></a>
-            <ul class="footer-links">
-        <li><a href="blog.html">Articles</a></li>
-        <li><a href="podcast.html">Podcast</a></li>
-        <li><a href="freebies.html">Freebies</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="newsletter.html">Newsletter</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
-        <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
-      </ul>
-      <span class="footer-copy">© 2026 Motheo Masole</span>
+    <div class="footer__bottom">
+      <span>&copy; <span data-year>2025</span> Motheo Masole</span>
+      <span>Bath, United Kingdom</span>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <script src="js/main.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
