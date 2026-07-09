@@ -11,6 +11,7 @@
   toggle.addEventListener('click', function () {
     var open = nav.getAttribute('data-open') === 'true';
     nav.setAttribute('data-open', String(!open));
+    toggle.setAttribute('aria-expanded', String(!open));
     toggle.textContent = open ? 'Menu' : 'Close';
   });
 })();
@@ -68,8 +69,8 @@
     var name = (form.querySelector('input[name="first_name"]') || {}).value || '';
     if (!email || email.indexOf('@') === -1) { say('Enter a valid email address.', 'err'); return; }
 
-    var original = btn ? btn.textContent : '';
-    if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+    var original = btn ? btn.innerHTML : '';
+    if (btn) { btn.disabled = true; btn.textContent = 'Sending\u2026'; }
     say('', '');
 
     fetch(ENDPOINT, {
@@ -86,7 +87,7 @@
         say('Something went wrong. Try again in a moment.', 'err');
       })
       .finally(function () {
-        if (btn) { btn.disabled = false; btn.textContent = original; }
+        if (btn) { btn.disabled = false; btn.innerHTML = original; }
       });
   });
 })();
