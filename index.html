@@ -1,132 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Motheo Masole — Personal Development & Intentional Living</title>
-  <meta name="description" content="One-minute lessons on student life, productivity, and personal growth — every Wednesday.">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Motheo Masole — With Intention</title>
+<meta name="description" content="With Intention is a podcast and weekly letter for people trying to do their twenties on purpose. From Motheo Masole." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
 </head>
-<body data-page="home">
+<body>
 
-  <nav>
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Motheo Masole" style="border-radius:50%;"></a>
-            <ul class="nav-links">
-        <li><a href="blog.html">Articles</a></li>
-        <li><a href="podcast.html">Podcast</a></li>
-        <li><a href="freebies.html">Freebies</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="newsletter.html" class="nav-cta">Newsletter</a></li>
-      </ul>
-      <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
-    </div>
-  </nav>
+<header class="nav" data-open="false">
+  <div class="wrap nav__inner">
+    <a class="wordmark" href="index.html">Motheo<span>.</span></a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="podcast.html">Podcast</a>
+      <a href="newsletter.html">Newsletter</a>
+      <a href="about.html">Story</a>
+      <a class="nav__cta" href="newsletter.html">Subscribe</a>
+    </nav>
+    <button class="nav__toggle" aria-label="Toggle menu">Menu</button>
+  </div>
+</header>
 
+<main>
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-text">
-      <div class="hero-tag">WILIOM Wednesdays</div>
-      <h1>Lessons from a life<br>lived <em>intentionally</em></h1>
-      <p class="hero-sub">Every Wednesday I share one-minute reflections on student life, productivity, and personal growth — honest lessons from my own journey as a Motswana student in the UK.</p>
-      <div class="hero-actions">
-        <a href="newsletter.html" class="btn-primary">Join the newsletter →</a>
-        <a href="blog.html" class="btn-secondary">Read the articles</a>
+    <div class="wrap">
+      <p class="hero__coord reveal">Motheo Masole &middot; Bath, UK &middot; Est. 2025</p>
+      <h1 class="display reveal">Do your twenties on purpose.</h1>
+      <p class="lead hero__sub reveal">A podcast and a one-minute weekly letter for ambitious people who don&rsquo;t want to drift through their most important decade. Fewer defaults. More intention.</p>
+      <div class="hero__actions reveal">
+        <a class="btn btn--primary" href="podcast.html">Listen to the show <span class="arrow">&rarr;</span></a>
+        <a class="btn btn--ghost" href="newsletter.html">Get the weekly letter</a>
       </div>
     </div>
-    <div class="hero-image-wrap scroll-fade">
-      <img src="images/motheo-light.jpg" alt="Motheo Masole" class="scroll-parallax">
-    </div>
   </section>
 
-  <!-- LATEST ARTICLES -->
-  <section class="articles-section">
-    <div class="section-header fade-up scroll-fade">
-      <span class="section-label">Latest</span>
-      <h2 class="section-title">Recent Articles</h2>
-      <p class="section-desc">Honest reflections on confidence, discipline, and building a life worth living.</p>
-    </div>
-    <div class="articles-grid" id="home-articles-grid"></div>
-    <div style="text-align:center; margin-top:2.5rem;">
-      <a href="blog.html" class="btn-secondary">View all articles →</a>
-    </div>
-  </section>
-
-
-  <!-- LATEST PODCAST EPISODES -->
-  <section class="articles-section" style="padding-top:0;">
-    <div class="section-header fade-up">
-      <span class="section-label">Podcast</span>
-      <h2 class="section-title">With Intention</h2>
-      <p class="section-desc">Honest conversations for ambitious young people navigating early adulthood.</p>
-    </div>
-    <div class="spotify-embed-wrap fade-up" style="border-radius:12px; overflow:hidden; box-shadow:0 8px 32px rgba(0,0,0,0.08); margin-bottom:1.5rem;">
-      <iframe
-        src="https://open.spotify.com/embed/show/1bjxn4ApzX3vl7Ld07ZK2I?utm_source=generator&theme=0"
-        width="100%" height="232" frameborder="0"
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-        loading="lazy">
-      </iframe>
-    </div>
-    <div style="text-align:center;">
-      <a href="podcast.html" class="btn-secondary">See all episodes →</a>
-    </div>
-  </section>
-
-  <!-- NEWSLETTER CTA -->
-  <section class="newsletter-section">
-    <div class="newsletter-inner">
-      <span class="section-label">Free Newsletter</span>
-      <h2 class="section-title">WILIOM Wednesdays</h2>
-      <p class="section-desc">Every Wednesday I share insights about life, 3 things I've learned and a new productivity hack. Free. No spam. Unsubscribe anytime.</p>
-      <form class="newsletter-form">
-        <input type="email" class="newsletter-input" placeholder="Your email address" required>
-        <button class="btn-primary" type="submit">Subscribe</button>
-      </form>
-      <p class="newsletter-success">🎉 You're in! Check your inbox to confirm.</p>
-      <p class="newsletter-note">Join hundreds of students and young adults. Free forever.</p>
-    </div>
-  </section>
-
-  <!-- ABOUT SNIPPET -->
-  <section class="about-section">
-    <div class="about-image-wrap fade-up scroll-fade">
-      <img src="images/motheo-mid.jpg" alt="Motheo Masole">
-      <div class="about-stat-card">
-        <div class="about-stat-number">WILIOM</div>
-        <div class="about-stat-label">Every Wednesday</div>
+  <!-- TWO PATHS -->
+  <section class="section section--ink">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="label">Two ways in</span>
+        <h2 class="h2">Start wherever you are.</h2>
+      </div>
+      <div class="paths">
+        <a class="path reveal" href="podcast.html">
+          <span class="path__idx">01 / Listen</span>
+          <h3>With Intention</h3>
+          <p>Long-form conversations on building a life you actually chose &mdash; ambition, habits, relationships, and figuring it out in real time. Made for 18&ndash;25s who are paying attention.</p>
+          <span class="path__go">Open the podcast <span class="arrow">&rarr;</span></span>
+        </a>
+        <a class="path reveal" href="newsletter.html">
+          <span class="path__idx">02 / Read</span>
+          <h3>WILIOM Wednesdays</h3>
+          <p>What I&rsquo;ve Learned In One Minute. One idea on intentional living, sent every Wednesday. Short enough to finish, sharp enough to use that day.</p>
+          <span class="path__go">Join the letter <span class="arrow">&rarr;</span></span>
+        </a>
       </div>
     </div>
-    <div class="about-content fade-up">
-      <span class="section-label">About Me</span>
-      <h2 class="section-title" style="margin-bottom:1.5rem;">Engineering student.<br>Personal development writer.</h2>
-      <p>I'm Motheo — originally from Botswana, now studying Mechanical Engineering at the University of Bath. Coming here was a dream of mine for years, but once I arrived, I faced something I didn't expect: the challenge of finding my purpose.</p>
-      <p>Over time, I've learned to slow down, appreciate where I am, and build small habits that keep me steady. I write about those lessons every week so you don't have to learn them the hard way.</p>
-      <a href="about.html" class="btn-secondary">Read my full story →</a>
+  </section>
+
+  <!-- WHAT THIS IS ABOUT -->
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="label">The idea</span>
+        <h2 class="h2">Most of your life runs on defaults. This is about choosing instead.</h2>
+      </div>
+      <div class="rows">
+        <div class="row reveal">
+          <span class="row__num">01</span>
+          <div class="row__body">
+            <h3 class="h3">Intention over autopilot</h3>
+            <p>The habits, the course, the friends, the feed &mdash; most of it was chosen for you or fell into place. The work is noticing which parts you&rsquo;d actually pick again.</p>
+          </div>
+        </div>
+        <div class="row reveal">
+          <span class="row__num">02</span>
+          <div class="row__body">
+            <h3 class="h3">Small, honest, repeatable</h3>
+            <p>No ten-step morning routines you&rsquo;ll abandon by Friday. Just ideas you can test this week and keep the ones that hold.</p>
+          </div>
+        </div>
+        <div class="row reveal">
+          <span class="row__num">03</span>
+          <div class="row__body">
+            <h3 class="h3">Built in public, still figuring it out</h3>
+            <p>I&rsquo;m an engineering student working this out alongside you, not a guru on a mountain. The show and the letter are the working notes.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <footer>
-    <div class="footer-inner">
-      <a href="index.html" class="footer-logo"><img src="images/logo.png" alt="Motheo Masole" style="border-radius:50%;"></a>
-            <ul class="footer-links">
-        <li><a href="blog.html">Articles</a></li>
-        <li><a href="podcast.html">Podcast</a></li>
-        <li><a href="freebies.html">Freebies</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="newsletter.html">Newsletter</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
-        <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
-      </ul>
-      <span class="footer-copy">© 2026 Motheo Masole</span>
+  <!-- CLOSING CTA -->
+  <section class="section section--panel">
+    <div class="wrap" style="text-align:center; display:grid; gap:1.75rem; justify-items:center;">
+      <span class="label label--plain reveal">One minute, every Wednesday</span>
+      <h2 class="h2 reveal" style="max-width:18ch;">Start with the letter. It&rsquo;s the easiest first step.</h2>
+      <div class="reveal">
+        <a class="btn btn--primary" href="newsletter.html">Subscribe free <span class="arrow">&rarr;</span></a>
+      </div>
     </div>
-  </footer>
+  </section>
+</main>
 
-  <script src="js/main.js"></script>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a class="wordmark" href="index.html">Motheo<span>.</span></a>
+        <p class="footer__tag">A podcast and weekly letter about doing your twenties on purpose.</p>
+      </div>
+      <div class="footer__cols">
+        <div class="footer__col">
+          <h4>Explore</h4>
+          <a href="podcast.html">Podcast</a>
+          <a href="newsletter.html">Newsletter</a>
+          <a href="about.html">Story</a>
+        </div>
+        <div class="footer__col">
+          <h4>Elsewhere</h4>
+          <a href="https://open.spotify.com/show/1bjxn4ApzX3vl7Ld07ZK2I" target="_blank" rel="noopener">Spotify</a>
+          <a href="mailto:motheo@motheomasole.com">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; <span data-year>2025</span> Motheo Masole</span>
+      <span>Bath, United Kingdom</span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
 </body>
 </html>
