@@ -4,11 +4,11 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>With Intention — The Podcast — Motheo Masole</title>
-<meta name="description" content="With Intention: long-form conversations on building a life you chose. Listen and follow." />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css" />
+<meta name="description" content="Long-form conversations giving ambitious young people the role models and honesty they need to take their purpose back into their own hands." />
+<link rel="icon" href="favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
@@ -21,7 +21,7 @@
       <a href="about.html">Story</a>
       <a class="nav__cta" href="newsletter.html">Subscribe</a>
     </nav>
-    <button class="nav__toggle" aria-label="Toggle menu">Menu</button>
+    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">Menu</button>
   </div>
 </header>
 
@@ -30,13 +30,14 @@
     <div class="wrap">
       <p class="hero__coord reveal">The Podcast &middot; With Intention</p>
       <h1 class="display reveal" style="max-width:14ch;">With Intention</h1>
-      <p class="lead hero__sub reveal">Long-form conversations on ambition, habits, relationships, and building a life you actually chose. For anyone doing their twenties on purpose.</p>
+      <p class="lead hero__sub reveal">Long-form conversations for ambitious young people trying to build a life that actually means something &mdash; in a world that makes it very easy not to.</p>
       <div class="hero__actions reveal">
         <a class="btn btn--primary" href="https://open.spotify.com/show/1bjxn4ApzX3vl7Ld07ZK2I" target="_blank" rel="noopener">Follow on Spotify <span class="arrow">&rarr;</span></a>
       </div>
     </div>
   </section>
 
+  <!-- LISTEN -->
   <section class="section section--ink" style="padding-top:0;">
     <div class="wrap">
       <div class="sec-head reveal" style="margin-top:clamp(3rem,6vw,5rem);">
@@ -45,7 +46,7 @@
       </div>
 
       <div class="embed-frame reveal">
-        <!-- Spotify show embed. Swap show/ for episode/EPISODE_ID to feature a single episode. -->
+        <!-- Spotify show embed. Swap show/ for episode/EPISODE_ID to feature one episode. -->
         <iframe
           title="With Intention on Spotify"
           style="border-radius:12px"
@@ -56,11 +57,11 @@
           loading="lazy"></iframe>
       </div>
 
-      <p class="pod-note reveal">New here? Hit follow &mdash; it&rsquo;s the one thing that helps the show grow, and it means every new episode lands in your library automatically.</p>
+      <p class="pod-note reveal">New here? Hit follow &mdash; it&rsquo;s the one thing that helps the show grow, and every new episode lands in your library automatically.</p>
 
       <div class="platforms reveal">
         <a class="btn btn--ghost" href="https://open.spotify.com/show/1bjxn4ApzX3vl7Ld07ZK2I" target="_blank" rel="noopener">Spotify</a>
-        <!-- When you're listed elsewhere, add them:
+        <!-- When listed elsewhere, add them:
         <a class="btn btn--ghost" href="#" target="_blank" rel="noopener">Apple Podcasts</a>
         <a class="btn btn--ghost" href="#" target="_blank" rel="noopener">YouTube</a>
         -->
@@ -68,13 +69,60 @@
     </div>
   </section>
 
-  <!-- CROSS-SELL -->
+  <!-- WHY THIS EXISTS: the access thesis -->
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="label">Why this exists</span>
+        <h2 class="h2">Most people your age aren&rsquo;t short on ambition. They&rsquo;re short on access.</h2>
+      </div>
+      <div class="prose reveal" style="max-width:62ch;">
+        <p>Access to the right conversations. The right role models. The right kind of honesty about what it actually takes to live a life with purpose instead of just a busy one.</p>
+        <p>With Intention exists to close that gap &mdash; to put the conversations most people never get in the room for out in the open, every week.</p>
+        <p class="pull">To take your purpose back into your own hands.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT TO EXPECT -->
   <section class="section section--panel">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="label">What to expect</span>
+      </div>
+      <div class="rows">
+        <div class="row reveal">
+          <span class="row__num">01</span>
+          <div class="row__body">
+            <h3 class="h3">Conversations with people who&rsquo;ve found clarity</h3>
+            <p>Each week, Motheo sits down with experts, authors, and builders who&rsquo;ve found real clarity in their own work &mdash; and pulls out what actually helped.</p>
+          </div>
+        </div>
+        <div class="row reveal">
+          <span class="row__num">02</span>
+          <div class="row__body">
+            <h3 class="h3">Solo episodes, thinking out loud</h3>
+            <p>Between the interviews, reflective episodes where he works through whatever he&rsquo;s wrestling with himself &mdash; a few steps ahead, not pretending to have arrived.</p>
+          </div>
+        </div>
+        <div class="row reveal">
+          <span class="row__num">03</span>
+          <div class="row__body">
+            <h3 class="h3">The questions that actually matter</h3>
+            <p>Purpose, identity, and ambition: what to do when the path isn&rsquo;t obvious, how to want things for the right reasons, and how to own your meaning instead of waiting for it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="section section--ink">
     <div class="wrap" style="text-align:center; display:grid; gap:1.75rem; justify-items:center;">
-      <span class="label label--plain reveal">Between episodes</span>
-      <h2 class="h2 reveal" style="max-width:20ch;">Get one idea from the show world every Wednesday.</h2>
+      <span class="label label--plain reveal">With Intention</span>
+      <h2 class="h2 reveal" style="max-width:20ch;">For anyone tired of drifting and ready to start choosing.</h2>
       <div class="reveal">
-        <a class="btn btn--primary" href="newsletter.html">Join WILIOM Wednesdays <span class="arrow">&rarr;</span></a>
+        <a class="btn btn--primary" href="https://open.spotify.com/show/1bjxn4ApzX3vl7Ld07ZK2I" target="_blank" rel="noopener">Follow the show <span class="arrow">&rarr;</span></a>
       </div>
     </div>
   </section>
@@ -108,6 +156,6 @@
   </div>
 </footer>
 
-<script src="main.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
