@@ -1,282 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>With Intention — Motheo Masole</title>
-  <meta name="description" content="With Intention — a podcast for ambitious 18–25 year olds navigating early adulthood, hosted by Motheo Masole. New episodes every week.">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <style>
-    .podcast-hero {
-      padding: 5rem 2rem 4rem;
-      max-width: var(--max-width);
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 280px;
-      gap: 5rem;
-      align-items: center;
-    }
-    .podcast-show-tag {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: var(--accent-light); color: var(--accent-dark);
-      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
-      text-transform: uppercase; padding: 0.4rem 0.9rem; border-radius: 50px;
-      margin-bottom: 1.25rem;
-    }
-    .podcast-hero-text h1 {
-      font-family: var(--font-display);
-      font-size: clamp(2.4rem, 4vw, 3.4rem);
-      font-weight: 500;
-      letter-spacing: -0.03em;
-      line-height: 1.15;
-      margin-bottom: 1rem;
-      color: var(--text-primary);
-    }
-    .podcast-hero-text h1 em { font-style: italic; color: var(--accent); }
-    .podcast-tagline {
-      font-size: 1.05rem;
-      color: var(--text-secondary);
-      line-height: 1.7;
-      margin-bottom: 2rem;
-      max-width: 500px;
-    }
-    .podcast-platforms {
-      display: flex; gap: 0.75rem; flex-wrap: wrap;
-    }
-    .platform-btn {
-      display: inline-flex; align-items: center; gap: 0.6rem;
-      padding: 0.65rem 1.2rem; border-radius: 50px;
-      font-size: 0.82rem; font-weight: 600;
-      transition: all 0.2s; white-space: nowrap;
-      font-family: var(--font-body); border: none; cursor: pointer;
-    }
-    .platform-btn.spotify { background: #1DB954; color: white; }
-    .platform-btn.spotify:hover { background: #17a349; transform: translateY(-2px); }
-    .platform-btn.apple { background: #1A1A1A; color: white; }
-    .platform-btn.apple:hover { background: #333; transform: translateY(-2px); }
-
-    .podcast-cover-wrap {
-      position: relative;
-    }
-    .podcast-cover-wrap::before {
-      content: '';
-      position: absolute;
-      inset: -12px;
-      background: var(--accent-light);
-      border-radius: 20px;
-      z-index: 0;
-    }
-    .podcast-cover {
-      position: relative; z-index: 1;
-      width: 100%; border-radius: 16px;
-      box-shadow: 0 20px 60px rgba(27, 92, 122, 0.2);
-    }
-
-    /* ── ABOUT BAND ── */
-    .podcast-about-band {
-      background: var(--accent-dark);
-      padding: 4.5rem 2rem;
-    }
-    .podcast-about-inner {
-      max-width: 680px; margin: 0 auto; text-align: center;
-    }
-    .podcast-about-inner .section-label { color: var(--accent); }
-    .podcast-about-inner .section-title { color: white; margin-bottom: 1.5rem; }
-    .podcast-about-inner p {
-      color: rgba(255,255,255,0.72); font-size: 1rem;
-      line-height: 1.85; margin-bottom: 1.1rem;
-    }
-    .podcast-about-inner p:last-child { margin-bottom: 0; }
-
-    /* ── EPISODES ── */
-    .episodes-section {
-      padding: 5rem 2rem;
-      max-width: var(--max-width);
-      margin: 0 auto;
-    }
-    .spotify-embed-wrap {
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
-      margin-bottom: 3.5rem;
-    }
-    .episodes-list { display: flex; flex-direction: column; }
-
-    .episode-item {
-      display: grid;
-      grid-template-columns: 52px 1fr auto;
-      gap: 1.5rem;
-      align-items: start;
-      padding: 2rem 0;
-      border-bottom: 1px solid var(--border);
-      transition: background 0.2s;
-    }
-    .episode-item:first-child { border-top: 1px solid var(--border); }
-
-    .episode-num {
-      font-family: var(--font-display);
-      font-size: 1.5rem; font-weight: 500;
-      color: var(--accent); line-height: 1;
-      opacity: 0.5; padding-top: 0.25rem;
-    }
-    .episode-type {
-      display: inline-block;
-      font-size: 0.65rem; font-weight: 700;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      padding: 0.25rem 0.65rem; border-radius: 50px; margin-bottom: 0.6rem;
-    }
-    .episode-type.guest { background: var(--accent-light); color: var(--accent-dark); }
-    .episode-type.solo { background: #f0f0ec; color: var(--text-secondary); }
-
-    .episode-title {
-      font-family: var(--font-display);
-      font-size: 1.1rem; font-weight: 500;
-      line-height: 1.35; margin-bottom: 0.4rem;
-      color: var(--text-primary);
-    }
-    .episode-guest {
-      font-size: 0.8rem; font-weight: 600;
-      color: var(--accent); margin-bottom: 0.6rem;
-    }
-    .episode-desc {
-      font-size: 0.875rem; color: var(--text-secondary);
-      line-height: 1.65; max-width: 580px;
-    }
-    .episode-meta {
-      text-align: right; font-size: 0.75rem;
-      color: var(--text-muted); display: flex;
-      flex-direction: column; gap: 0.4rem;
-      align-items: flex-end; padding-top: 0.25rem;
-      white-space: nowrap;
-    }
-    .episode-listen {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      font-size: 0.78rem; font-weight: 600;
-      color: var(--accent); transition: gap 0.2s;
-    }
-    .episode-item:hover .episode-listen { gap: 0.6rem; }
-
-    @media (max-width: 900px) {
-      .podcast-hero { grid-template-columns: 1fr; text-align: center; gap: 3rem; }
-      .podcast-cover-wrap { max-width: 220px; margin: 0 auto; }
-      .podcast-platforms { justify-content: center; }
-      .podcast-tagline { margin-left: auto; margin-right: auto; }
-    }
-    @media (max-width: 640px) {
-      .episode-item { grid-template-columns: 36px 1fr; }
-      .episode-meta { display: none; }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>With Intention — The Podcast — Motheo Masole</title>
+<meta name="description" content="With Intention: long-form conversations on building a life you chose. Listen and follow." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
 </head>
-<body data-page="podcast">
+<body>
 
-  <nav>
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Motheo Masole" style="border-radius:50%;"></a>
-            <ul class="nav-links">
-        <li><a href="blog.html">Articles</a></li>
-        <li><a href="podcast.html" class="active">Podcast</a></li>
-        <li><a href="freebies.html">Freebies</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="newsletter.html" class="nav-cta">Newsletter</a></li>
-      </ul>
-      <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
-    </div>
-  </nav>
+<header class="nav" data-open="false">
+  <div class="wrap nav__inner">
+    <a class="wordmark" href="index.html">Motheo<span>.</span></a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="podcast.html" aria-current="page">Podcast</a>
+      <a href="newsletter.html">Newsletter</a>
+      <a href="about.html">Story</a>
+      <a class="nav__cta" href="newsletter.html">Subscribe</a>
+    </nav>
+    <button class="nav__toggle" aria-label="Toggle menu">Menu</button>
+  </div>
+</header>
 
-  <!-- HERO -->
-  <section class="podcast-hero">
-    <div class="podcast-hero-text fade-up">
-      <div class="podcast-show-tag">🎙 New episodes every week</div>
-      <h1>With <em>Intention</em></h1>
-      <p class="podcast-tagline">A podcast for ambitious 18–25 year olds navigating early adulthood. Honest conversations about who you're becoming — and how to build a life on your own terms.</p>
-      <div class="podcast-platforms">
-        <a href="https://open.spotify.com/show/1bjxn4ApzX3vl7Ld07ZK2I" target="_blank" class="platform-btn spotify">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-          Listen on Spotify
-        </a>
-        <a href="https://podcasts.apple.com/gb/podcast/with-intention/id1895110791" target="_blank" class="platform-btn apple">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-          Apple Podcasts
-        </a>
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="hero__coord reveal">The Podcast &middot; With Intention</p>
+      <h1 class="display reveal" style="max-width:14ch;">With Intention</h1>
+      <p class="lead hero__sub reveal">Long-form conversations on ambition, habits, relationships, and building a life you actually chose. For anyone doing their twenties on purpose.</p>
+      <div class="hero__actions reveal">
+        <a class="btn btn--primary" href="https://open.spotify.com/show/1bjxn4ApzX3vl7Ld07ZK2I" target="_blank" rel="noopener">Follow on Spotify <span class="arrow">&rarr;</span></a>
       </div>
     </div>
-    <div class="podcast-cover-wrap scroll-fade fade-up">
-      <img class="podcast-cover" src="https://i.scdn.co/image/ab6765630000ba8a6c33da1a26376500501d3e1b" alt="With Intention Podcast Cover">
+  </section>
+
+  <section class="section section--ink" style="padding-top:0;">
+    <div class="wrap">
+      <div class="sec-head reveal" style="margin-top:clamp(3rem,6vw,5rem);">
+        <span class="label">Listen now</span>
+        <h2 class="h2">Press play.</h2>
+      </div>
+
+      <div class="embed-frame reveal">
+        <!-- Spotify show embed. Swap show/ for episode/EPISODE_ID to feature a single episode. -->
+        <iframe
+          title="With Intention on Spotify"
+          style="border-radius:12px"
+          src="https://open.spotify.com/embed/show/1bjxn4ApzX3vl7Ld07ZK2I?utm_source=generator&theme=0"
+          width="100%" height="352" frameborder="0"
+          allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"></iframe>
+      </div>
+
+      <p class="pod-note reveal">New here? Hit follow &mdash; it&rsquo;s the one thing that helps the show grow, and it means every new episode lands in your library automatically.</p>
+
+      <div class="platforms reveal">
+        <a class="btn btn--ghost" href="https://open.spotify.com/show/1bjxn4ApzX3vl7Ld07ZK2I" target="_blank" rel="noopener">Spotify</a>
+        <!-- When you're listed elsewhere, add them:
+        <a class="btn btn--ghost" href="#" target="_blank" rel="noopener">Apple Podcasts</a>
+        <a class="btn btn--ghost" href="#" target="_blank" rel="noopener">YouTube</a>
+        -->
+      </div>
     </div>
   </section>
 
-  <!-- ABOUT THE SHOW -->
-  <section class="podcast-about-band">
-    <div class="podcast-about-inner fade-up">
-      <span class="section-label">About the show</span>
-      <h2 class="section-title">Real conversations.<br>No filter.</h2>
-      <p>Being young is hard. Nobody really prepares you for what it actually feels like — the anxiety, the expectations, the pressure to have it all figured out before you even know who you are.</p>
-      <p>With Intention is for young people who want to live differently. With more purpose, more honesty, and more of themselves in every decision they make. Every episode we get into the real stuff — habits, relationships, mental health, values, the future.</p>
-      <p>Honest conversations with people who've figured something out, and solo reflections from someone still figuring it out. Think of it as an older brother who's a few steps ahead — and doing the work right alongside you.</p>
+  <!-- CROSS-SELL -->
+  <section class="section section--panel">
+    <div class="wrap" style="text-align:center; display:grid; gap:1.75rem; justify-items:center;">
+      <span class="label label--plain reveal">Between episodes</span>
+      <h2 class="h2 reveal" style="max-width:20ch;">Get one idea from the show world every Wednesday.</h2>
+      <div class="reveal">
+        <a class="btn btn--primary" href="newsletter.html">Join WILIOM Wednesdays <span class="arrow">&rarr;</span></a>
+      </div>
     </div>
   </section>
+</main>
 
-  <!-- EPISODES -->
-  <section class="episodes-section">
-    <div class="section-header fade-up">
-      <span class="section-label">Episodes</span>
-      <h2 class="section-title">Latest Episodes</h2>
-      <p class="section-desc">New episodes every week — listen directly below or on your favourite platform.</p>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a class="wordmark" href="index.html">Motheo<span>.</span></a>
+        <p class="footer__tag">A podcast and weekly letter about doing your twenties on purpose.</p>
+      </div>
+      <div class="footer__cols">
+        <div class="footer__col">
+          <h4>Explore</h4>
+          <a href="podcast.html">Podcast</a>
+          <a href="newsletter.html">Newsletter</a>
+          <a href="about.html">Story</a>
+        </div>
+        <div class="footer__col">
+          <h4>Elsewhere</h4>
+          <a href="https://open.spotify.com/show/1bjxn4ApzX3vl7Ld07ZK2I" target="_blank" rel="noopener">Spotify</a>
+          <a href="mailto:motheo@motheomasole.com">Email</a>
+        </div>
+      </div>
     </div>
-
-    <!-- Spotify embed — always shows your latest episodes automatically -->
-    <div class="spotify-embed-wrap fade-up">
-      <iframe
-        src="https://open.spotify.com/embed/show/1bjxn4ApzX3vl7Ld07ZK2I?utm_source=generator&theme=0"
-        width="100%" height="352" frameborder="0"
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-        loading="lazy">
-      </iframe>
+    <div class="footer__bottom">
+      <span>&copy; <span data-year>2025</span> Motheo Masole</span>
+      <span>Bath, United Kingdom</span>
     </div>
+  </div>
+</footer>
 
-    <div style="text-align:center; margin-top:2rem;">
-      <a href="https://open.spotify.com/show/1bjxn4ApzX3vl7Ld07ZK2I" target="_blank" class="btn-secondary" style="margin-right:0.75rem;">All episodes on Spotify →</a>
-      <a href="https://podcasts.apple.com/gb/podcast/with-intention/id1895110791" target="_blank" class="btn-secondary">Listen on Apple Podcasts →</a>
-    </div>
-  </section>
-
-  <!-- NEWSLETTER -->
-  <section class="newsletter-section">
-    <div class="newsletter-inner">
-      <span class="section-label">Stay close</span>
-      <h2 class="section-title">Never miss an episode</h2>
-      <p class="section-desc">Subscribe to WILIOM Wednesdays and get a heads up every time a new episode drops, plus the weekly reflection that goes alongside it.</p>
-      <form class="newsletter-form">
-        <input type="email" class="newsletter-input" placeholder="Your email address" required>
-        <button class="btn-primary" type="submit">Subscribe free</button>
-      </form>
-      <p class="newsletter-success">🎉 You're in! Check your inbox to confirm.</p>
-      <p class="newsletter-note">No spam. Unsubscribe anytime.</p>
-    </div>
-  </section>
-
-  <footer>
-    <div class="footer-inner">
-      <a href="index.html" class="footer-logo"><img src="images/logo.png" alt="Motheo Masole" style="border-radius:50%;"></a>
-            <ul class="footer-links">
-        <li><a href="blog.html">Articles</a></li>
-        <li><a href="podcast.html">Podcast</a></li>
-        <li><a href="freebies.html">Freebies</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="newsletter.html">Newsletter</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
-        <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
-      </ul>
-      <span class="footer-copy">© 2026 Motheo Masole</span>
-    </div>
-  </footer>
-
-  <script src="js/main.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
