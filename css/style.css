@@ -261,11 +261,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 /* ---- Photo band ---- */
 /* Home hero: a full band of the brand blue. The portrait's backdrop is the
-   same blue, so the photo has no visible edges and sits on the band itself. */
-.hero--blue { background: var(--accent); color: var(--paper); padding-bottom: 0; overflow: hidden; }
-.hero__split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem, 4vw, 4rem); align-items: end; }
-.hero--blue .hero__content { padding-bottom: clamp(4rem, 8vw, 6.5rem); align-self: center; }
-.hero--blue .display { font-size: clamp(2.5rem, 4.8vw, 4rem); line-height: 1.03; max-width: 14ch; }
+   same blue, so the photo has no visible edges and sits on the band itself.
+   The portrait is sized from the band's height, so it always fills the band
+   from just under the top down to the bottom edge. */
+.hero--blue { background: var(--accent); color: var(--paper); padding-bottom: 0; overflow: hidden; position: relative; }
+.hero__split { display: block; }
+.hero--blue .hero__content { position: relative; z-index: 1; width: 50%; padding-bottom: clamp(4rem, 8vw, 6.5rem); }
+.hero--blue .display { font-size: clamp(2.5rem, 4.8vw, 4rem); line-height: 1.03; max-width: 13ch; }
+.hero--blue .hero__sub { max-width: 34ch; }
 .hero--blue .hero__coord { color: #A9C9DB; }
 .hero--blue .lead { color: #DCE8EF; }
 .hero--blue .btn--primary { background: var(--pop); color: var(--ink); }
@@ -273,10 +276,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .hero--blue .btn--ghost { color: var(--paper); border-color: rgba(255,255,255,0.65); }
 .hero--blue .btn--ghost:hover { border-color: var(--paper); }
 .hero--blue a:focus-visible { outline-color: var(--paper); }
-.hero--blue .hero__content { position: relative; z-index: 1; }
-/* The portrait is drawn larger than its column and anchored to the bottom,
-   so Motheo fills the right half of the band. */
-.hero__media img { width: 128%; max-width: none; height: auto; display: block; margin-left: -10%; }
+.hero__media {
+  position: absolute; bottom: 0; height: 100%;
+  /* starts just to the right of the buttons, at any screen width */
+  left: calc(max(0px, (100vw - var(--wrap)) / 2) + var(--gutter) + 21.5rem);
+}
+.hero__media img { height: 100%; width: auto; max-width: none; display: block; }
 
 /* ---- Spotify, loaded only when asked ---- */
 .embed-ask { display: grid; gap: 1.1rem; justify-items: start; padding: clamp(1.75rem, 4vw, 2.75rem); }
@@ -308,10 +313,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     padding: 1.75rem var(--gutter) 2.25rem;
   }
   .paths { grid-template-columns: 1fr; }
-  .hero__split { grid-template-columns: 1fr; }
-  .hero--blue .hero__content { padding-bottom: 0; }
-  .hero__media { max-width: 460px; margin-inline: auto; width: 100%; }
-  .hero__media img { width: 116%; margin-left: -8%; }
+  .hero--blue .hero__content { width: auto; padding-bottom: 0; }
+  .hero--blue .display, .hero--blue .hero__sub { max-width: none; }
+  .hero__media { position: static; height: auto; max-width: 460px; margin-inline: auto; }
+  .hero__media img { height: auto; width: 116%; margin-left: -8%; }
   .story-grid { grid-template-columns: 1fr; }
   .portrait { position: static; max-width: 340px; }
 }
