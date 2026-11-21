@@ -1,61 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>WILIOM Wednesdays — The Newsletter — Motheo Masole</title>
-<meta name="description" content="WILIOM — What I've Learned In One Minute. A one-minute public journal, every Wednesday. One honest reflection, not advice. For people living with intention." />
+<title>WILIOM Wednesdays, the newsletter | Motheo Masole</title>
+<meta name="description" content="WILIOM, What I've Learned In One Minute. A one-minute public journal sent every Wednesday, for people living with intention." />
+<meta property="og:title" content="WILIOM Wednesdays, the newsletter | Motheo Masole" />
+<meta property="og:description" content="WILIOM, What I've Learned In One Minute. A one-minute public journal sent every Wednesday, for people living with intention." />
+<meta property="og:image" content="https://motheomasole.com/images/motheo-dark.jpg" />
 <link rel="icon" href="favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/style.css?v=3" />
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
 <header class="nav" data-open="false">
   <div class="wrap nav__inner">
-    <a class="wordmark" href="index.html">Motheo<span>.</span></a>
-    <nav class="nav__links" aria-label="Primary">
+    <a class="wordmark" href="index.html" aria-label="Motheo Masole, home">Motheo<span>.</span></a>
+    <nav class="nav__links" id="nav-links" aria-label="Primary">
       <a href="podcast.html">Podcast</a>
       <a href="newsletter.html" aria-current="page">Newsletter</a>
+      <a href="community.html">Community</a>
       <a href="about.html">Story</a>
       <a class="nav__cta" href="newsletter.html">Subscribe</a>
     </nav>
-    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+    <button class="nav__toggle" aria-controls="nav-links" aria-expanded="false">Menu</button>
   </div>
 </header>
 
-<main>
+<main id="main">
   <section class="hero">
     <div class="wrap">
       <p class="hero__coord reveal">WILIOM &middot; What I&rsquo;ve Learned In One Minute</p>
       <h1 class="display reveal" style="max-width:14ch;">One honest minute. Every Wednesday.</h1>
-      <p class="lead hero__sub reveal">A short public journal from Motheo. Not advice, not productivity, not a finished lesson &mdash; just one honest reflection from someone trying to live with intention, shared with people doing the same.</p>
+      <p class="lead hero__sub reveal">A short public journal I send every Wednesday. Each one is a single honest reflection from someone trying to live with intention, shared with people who are doing the same.</p>
 
-      <form class="signup" data-signup novalidate>
+      <form class="signup" data-signup data-list="newsletter" data-success="You&rsquo;re in. Keep an eye on your inbox for a confirmation email." novalidate>
         <div class="form-row reveal">
-          <input type="text" name="first_name" placeholder="First name" autocomplete="given-name" aria-label="First name" />
-          <input type="email" name="email" placeholder="you@email.com" autocomplete="email" required aria-label="Email address" />
-          <button class="btn btn--primary" type="submit">Subscribe <span class="arrow">&rarr;</span></button>
+          <label class="sr-only" for="first_name">First name</label>
+          <input type="text" id="first_name" name="first_name" placeholder="First name" autocomplete="given-name" />
+          <label class="sr-only" for="email">Email address</label>
+          <input type="email" id="email" name="email" placeholder="you@email.com" autocomplete="email" required />
+          <button class="btn btn--primary" type="submit">Subscribe <span class="arrow" aria-hidden="true">&rarr;</span></button>
         </div>
-        <p class="form-note reveal">Free. No spam. Unsubscribe in one click.</p>
+        <p class="form-note reveal">Free. Unsubscribe in one click.</p>
+        <p class="consent reveal">By subscribing you agree to receive WILIOM Wednesdays by email, and you can unsubscribe at any time. <a href="privacy.html">How your details are used</a>.</p>
         <p class="form-msg" data-state="" role="status" aria-live="polite"></p>
       </form>
     </div>
   </section>
 
-  <!-- WHO IT'S FOR -->
-  <section class="section section--ink" style="padding-top:0;">
+  <section class="section section--ink">
     <div class="wrap">
-      <div class="sec-head reveal" style="margin-top:clamp(3rem,6vw,5rem);">
+      <div class="sec-head reveal">
         <span class="label">Who it&rsquo;s for</span>
         <h2 class="h2">For people living a little against the curve.</h2>
       </div>
-      <p class="lead reveal" style="max-width:56ch;">If you&rsquo;re trying to take life with purpose &mdash; and actually act on it, rather than drift along with everyone else &mdash; this is a small weekly signal that you&rsquo;re not doing it alone.</p>
+      <p class="lead reveal" style="max-width:56ch;">If you&rsquo;re trying to live with purpose and actually act on it while everyone around you drifts along, this is a small weekly reminder that there are other people doing it with you.</p>
     </div>
   </section>
 
-  <!-- WHAT IT IS -->
   <section class="section">
     <div class="wrap">
       <div class="sec-head reveal">
@@ -63,15 +70,15 @@
         <h2 class="h2">A journal that happens to be public.</h2>
       </div>
       <div class="prose reveal" style="max-width:62ch;">
-        <p>Each issue is a single honest reflection on something real &mdash; an ordinary moment, an observation, a small shift in thinking &mdash; worked through on the page rather than packaged up as a lesson.</p>
-        <p>You&rsquo;re not being taught or advised. You&rsquo;re being let into a private train of thought that happens to be shared. Closer to reading someone&rsquo;s journal entry that they decided to send, than content built to be useful.</p>
+        <p>Each issue is one reflection on something real from my week, whether that&rsquo;s an ordinary moment, an observation or a small shift in thinking, and I work through it on the page as it happened.</p>
+        <p>It reads like a journal entry I decided to send, so you get the actual train of thought and you can take from it whatever is useful to you.</p>
       </div>
 
       <ul class="perks" style="margin-top:2.5rem;">
-        <li class="reveal">One honest reflection each week &mdash; not a lesson, not a list of links.</li>
-        <li class="reveal">Under a minute to read. That&rsquo;s the whole promise, and it&rsquo;s in the name.</li>
-        <li class="reveal">No advice, no productivity hacks, no performance. Just what&rsquo;s actually going on.</li>
-        <li class="reveal">For people trying to live with intention, against the drift.</li>
+        <li class="reveal">One honest reflection each week.</li>
+        <li class="reveal">Under a minute to read, which is the whole promise and it&rsquo;s in the name.</li>
+        <li class="reveal">Written from what&rsquo;s actually going on in my life that week.</li>
+        <li class="reveal">For people who want to live with intention.</li>
       </ul>
     </div>
   </section>
@@ -79,9 +86,9 @@
   <section class="section section--panel">
     <div class="wrap" style="text-align:center; display:grid; gap:1.75rem; justify-items:center;">
       <span class="label label--plain reveal">Prefer to listen?</span>
-      <h2 class="h2 reveal" style="max-width:18ch;">The letter&rsquo;s the short form. The podcast is the long one.</h2>
+      <h2 class="h2 reveal" style="max-width:18ch;">The letter is the short form and the podcast is the long one.</h2>
       <div class="reveal">
-        <a class="btn btn--ghost" href="podcast.html">Explore the podcast <span class="arrow">&rarr;</span></a>
+        <a class="btn btn--ghost" href="podcast.html">Explore the podcast <span class="arrow" aria-hidden="true">&rarr;</span></a>
       </div>
     </div>
   </section>
@@ -91,30 +98,32 @@
   <div class="wrap">
     <div class="footer__top">
       <div class="footer__brand">
-        <a class="wordmark" href="index.html">Motheo<span>.</span></a>
-        <p class="footer__tag">A podcast and weekly letter about doing your twenties on purpose.</p>
+        <a class="wordmark" href="index.html" aria-label="Motheo Masole, home">Motheo<span>.</span></a>
+        <p class="footer__tag">A podcast, a weekly letter and a community about doing your twenties on purpose.</p>
       </div>
       <div class="footer__cols">
         <div class="footer__col">
-          <h4>Explore</h4>
+          <h2>Explore</h2>
           <a href="podcast.html">Podcast</a>
           <a href="newsletter.html">Newsletter</a>
+          <a href="community.html">Community</a>
           <a href="about.html">Story</a>
         </div>
         <div class="footer__col">
-          <h4>Elsewhere</h4>
+          <h2>Elsewhere</h2>
+          <a href="https://www.instagram.com/motheomasole/" target="_blank" rel="noopener">Instagram</a>
           <a href="https://open.spotify.com/show/1bjxn4ApzX3vl7Ld07ZK2I" target="_blank" rel="noopener">Spotify</a>
-          <a href="mailto:motheo@motheomasole.com">Email</a>
+          <a href="mailto:motheo@motheomasole.com">motheo@motheomasole.com</a>
         </div>
       </div>
     </div>
     <div class="footer__bottom">
-      <span>&copy; <span data-year>2025</span> Motheo Masole</span>
-      <span>Bath, United Kingdom</span>
+      <span>&copy; <span data-year>2026</span> Motheo Masole &middot; Bath, United Kingdom</span>
+      <span class="footer__legal"><a href="privacy.html">Privacy and cookies</a></span>
     </div>
   </div>
 </footer>
 
-<script src="js/main.js"></script>
+<script src="js/main.js?v=3"></script>
 </body>
 </html>

@@ -16,6 +16,23 @@
   });
 })();
 
+/* -- Spotify player: only loads when the visitor asks for it -- */
+(function () {
+  var frame = document.querySelector('[data-spotify]');
+  var btn = document.querySelector('[data-spotify-load]');
+  if (!frame || !btn) return;
+  btn.addEventListener('click', function () {
+    var f = document.createElement('iframe');
+    f.title = 'With Intention on Spotify';
+    f.src = frame.getAttribute('data-spotify');
+    f.width = '100%'; f.height = '352';
+    f.style.border = '0'; f.style.borderRadius = '12px';
+    f.allow = 'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';
+    frame.innerHTML = '';
+    frame.appendChild(f);
+  });
+})();
+
 /* -- Scroll reveal -- */
 (function () {
   var items = document.querySelectorAll('.reveal');
@@ -37,20 +54,12 @@
   if (y) y.textContent = new Date().getFullYear();
 })();
 
-/* -- Newsletter signup --
-   ------------------------------------------------------------
-   This posts to your existing Netlify serverless function that
-   proxies the Kit (ConvertKit) API. Set ENDPOINT below to match
-   the function you already have in /netlify/functions/.
-   It expects the function to accept { email, first_name } as JSON
-   and subscribe them to form 8495408.
-
-   Prefer zero backend? You can instead delete this block and drop
-   Kit's own embed form onto the newsletter page — but this keeps
-   signups on your domain with your styling, which is nicer.
-   ------------------------------------------------------------ */
+/* -- Signup forms --
+   Posts { email, first_name, list } to the Netlify function in
+   netlify/functions/subscribe.js, which adds the person to Kit.
+   data-list on the form picks the list: "newsletter" or "iha". -- */
 (function () {
-  var ENDPOINT = '/.netlify/functions/subscribe'; // <-- match your function name
+  var ENDPOINT = '/.netlify/functions/subscribe';
 
   var form = document.querySelector('[data-signup]');
   if (!form) return;
@@ -67,7 +76,7 @@
     e.preventDefault();
     var email = (form.querySelector('input[type="email"]') || {}).value || '';
     var name = (form.querySelector('input[name="first_name"]') || {}).value || '';
-    if (!email || email.indexOf('@') === -1) { say('Enter a valid email address.', 'err'); return; }
+    if (!email || email.indexOf('@') === -1) { say('Enter a valid email address.', 'err'); form.querySelector('input[type="email"]').focus(); return; }
 
     var original = btn ? btn.innerHTML : '';
     if (btn) { btn.disabled = true; btn.textContent = 'Sending\u2026'; }
@@ -76,15 +85,15 @@
     fetch(ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: email, first_name: name })
+      body: JSON.stringify({ email: email, first_name: name, list: form.getAttribute('data-list') || 'newsletter' })
     })
       .then(function (r) { if (!r.ok) throw new Error('bad status'); return r.json().catch(function () { return {}; }); })
       .then(function () {
         form.reset();
-        say('You\u2019re in. Check your inbox to confirm your first Wednesday.', 'ok');
+        say(form.getAttribute('data-success') || 'You\u2019re in. Check your inbox to confirm your first Wednesday.', 'ok');
       })
       .catch(function () {
-        say('Something went wrong. Try again in a moment.', 'err');
+        say('Something went wrong and you haven\u2019t been added yet. Try again in a moment.', 'err');
       })
       .finally(function () {
         if (btn) { btn.disabled = false; btn.innerHTML = original; }

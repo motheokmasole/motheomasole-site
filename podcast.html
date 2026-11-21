@@ -1,90 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>With Intention — The Podcast — Motheo Masole</title>
-<meta name="description" content="Long-form conversations giving ambitious young people the role models and honesty they need to take their purpose back into their own hands." />
+<title>With Intention, the podcast | Motheo Masole</title>
+<meta name="description" content="Long conversations that give ambitious young people the role models and honesty they need to take their purpose back into their own hands." />
+<meta property="og:title" content="With Intention, the podcast | Motheo Masole" />
+<meta property="og:description" content="Long conversations that give ambitious young people the role models and honesty they need to take their purpose back into their own hands." />
+<meta property="og:image" content="https://motheomasole.com/images/motheo-dark.jpg" />
 <link rel="icon" href="favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/style.css?v=3" />
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
 <header class="nav" data-open="false">
   <div class="wrap nav__inner">
-    <a class="wordmark" href="index.html">Motheo<span>.</span></a>
-    <nav class="nav__links" aria-label="Primary">
+    <a class="wordmark" href="index.html" aria-label="Motheo Masole, home">Motheo<span>.</span></a>
+    <nav class="nav__links" id="nav-links" aria-label="Primary">
       <a href="podcast.html" aria-current="page">Podcast</a>
       <a href="newsletter.html">Newsletter</a>
+      <a href="community.html">Community</a>
       <a href="about.html">Story</a>
       <a class="nav__cta" href="newsletter.html">Subscribe</a>
     </nav>
-    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+    <button class="nav__toggle" aria-controls="nav-links" aria-expanded="false">Menu</button>
   </div>
 </header>
 
-<main>
+<main id="main">
   <section class="hero">
     <div class="wrap">
-      <p class="hero__coord reveal">The Podcast &middot; With Intention</p>
+      <p class="hero__coord reveal">The podcast</p>
       <h1 class="display reveal" style="max-width:14ch;">With Intention</h1>
-      <p class="lead hero__sub reveal">Long-form conversations for ambitious young people trying to build a life that actually means something &mdash; in a world that makes it very easy not to.</p>
+      <p class="lead hero__sub reveal">Long conversations for ambitious young people who want to build a life that actually means something, in a world that makes it very easy not to.</p>
       <div class="hero__actions reveal">
-        <a class="btn btn--primary" href="https://open.spotify.com/show/1bjxn4ApzX3vl7Ld07ZK2I" target="_blank" rel="noopener">Follow on Spotify <span class="arrow">&rarr;</span></a>
+        <a class="btn btn--primary" href="https://open.spotify.com/show/1bjxn4ApzX3vl7Ld07ZK2I" target="_blank" rel="noopener">Follow on Spotify <span class="arrow" aria-hidden="true">&rarr;</span></a>
       </div>
     </div>
   </section>
 
-  <!-- LISTEN -->
-  <section class="section section--ink" style="padding-top:0;">
+  <section class="section section--ink">
     <div class="wrap">
-      <div class="sec-head reveal" style="margin-top:clamp(3rem,6vw,5rem);">
+      <div class="sec-head reveal">
         <span class="label">Listen now</span>
         <h2 class="h2">Press play.</h2>
       </div>
 
-      <div class="embed-frame reveal">
-        <!-- Spotify show embed. Swap show/ for episode/EPISODE_ID to feature one episode. -->
-        <iframe
-          title="With Intention on Spotify"
-          style="border-radius:12px"
-          src="https://open.spotify.com/embed/show/1bjxn4ApzX3vl7Ld07ZK2I?utm_source=generator&theme=0"
-          width="100%" height="352" frameborder="0"
-          allowfullscreen=""
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy"></iframe>
+      <div class="embed-frame reveal" data-spotify="https://open.spotify.com/embed/show/1bjxn4ApzX3vl7Ld07ZK2I?theme=0">
+        <div class="embed-ask">
+          <p>The player comes from Spotify, and Spotify uses its own cookies once it loads. It only loads when you ask for it.</p>
+          <button class="btn btn--primary" type="button" data-spotify-load>Load the Spotify player</button>
+          <a class="btn btn--ghost" href="https://open.spotify.com/show/1bjxn4ApzX3vl7Ld07ZK2I" target="_blank" rel="noopener">Open in Spotify instead</a>
+        </div>
       </div>
 
-      <p class="pod-note reveal">New here? Hit follow &mdash; it&rsquo;s the one thing that helps the show grow, and every new episode lands in your library automatically.</p>
-
-      <div class="platforms reveal">
-        <a class="btn btn--ghost" href="https://open.spotify.com/show/1bjxn4ApzX3vl7Ld07ZK2I" target="_blank" rel="noopener">Spotify</a>
-        <!-- When listed elsewhere, add them:
-        <a class="btn btn--ghost" href="#" target="_blank" rel="noopener">Apple Podcasts</a>
-        <a class="btn btn--ghost" href="#" target="_blank" rel="noopener">YouTube</a>
-        -->
-      </div>
+      <p class="pod-note reveal">If you&rsquo;re new here, follow the show on Spotify so every new episode lands in your library automatically. It&rsquo;s also the one thing that really helps the show grow.</p>
     </div>
   </section>
 
-  <!-- WHY THIS EXISTS: the access thesis -->
   <section class="section">
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="label">Why this exists</span>
-        <h2 class="h2">Most people your age aren&rsquo;t short on ambition. They&rsquo;re short on access.</h2>
+        <h2 class="h2">Most people our age have the ambition. What we rarely get is access.</h2>
       </div>
       <div class="prose reveal" style="max-width:62ch;">
-        <p>Access to the right conversations. The right role models. The right kind of honesty about what it actually takes to live a life with purpose instead of just a busy one.</p>
-        <p>With Intention exists to close that gap &mdash; to put the conversations most people never get in the room for out in the open, every week.</p>
-        <p class="pull">To take your purpose back into your own hands.</p>
+        <p>Access to the right conversations, the right role models and the right kind of honesty about what it takes to live with purpose when it&rsquo;s so much easier to just stay busy.</p>
+        <p>With Intention puts those conversations out in the open, so you can hear them without needing to know the right people first.</p>
+        <p class="pull">Take your purpose back into your own hands.</p>
       </div>
     </div>
   </section>
 
-  <!-- WHAT TO EXPECT -->
   <section class="section section--panel">
     <div class="wrap">
       <div class="sec-head reveal">
@@ -93,37 +84,36 @@
       </div>
       <div class="rows">
         <div class="row reveal">
-          <span class="row__num">01</span>
+          <span class="row__num" aria-hidden="true">01</span>
           <div class="row__body">
             <h3 class="h3">Conversations with people who&rsquo;ve found clarity</h3>
-            <p>Each week, Motheo sits down with experts, authors, and builders who&rsquo;ve found real clarity in their own work &mdash; and pulls out what actually helped.</p>
+            <p>I sit down with people who&rsquo;ve found real clarity in their own work and ask them what actually helped them get there.</p>
           </div>
         </div>
         <div class="row reveal">
-          <span class="row__num">02</span>
+          <span class="row__num" aria-hidden="true">02</span>
           <div class="row__body">
             <h3 class="h3">Solo episodes, thinking out loud</h3>
-            <p>Between the interviews, reflective episodes where he works through whatever he&rsquo;s wrestling with himself &mdash; a few steps ahead, not pretending to have arrived.</p>
+            <p>Between the interviews I record reflective episodes where I work through whatever I&rsquo;m wrestling with myself, as someone who is a few steps ahead and still very much on the way.</p>
           </div>
         </div>
         <div class="row reveal">
-          <span class="row__num">03</span>
+          <span class="row__num" aria-hidden="true">03</span>
           <div class="row__body">
             <h3 class="h3">The questions that actually matter</h3>
-            <p>Purpose, identity, and ambition: what to do when the path isn&rsquo;t obvious, how to want things for the right reasons, and how to own your meaning instead of waiting for it.</p>
+            <p>Purpose, identity and ambition. What to do when the path isn&rsquo;t obvious, how to want things for the right reasons, and how to own your meaning so you can stop waiting for it.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CLOSING -->
   <section class="section section--ink">
     <div class="wrap" style="text-align:center; display:grid; gap:1.75rem; justify-items:center;">
       <span class="label label--plain reveal">With Intention</span>
       <h2 class="h2 reveal" style="max-width:20ch;">For anyone tired of drifting and ready to start choosing.</h2>
       <div class="reveal">
-        <a class="btn btn--primary" href="https://open.spotify.com/show/1bjxn4ApzX3vl7Ld07ZK2I" target="_blank" rel="noopener">Follow the show <span class="arrow">&rarr;</span></a>
+        <a class="btn btn--primary" href="https://open.spotify.com/show/1bjxn4ApzX3vl7Ld07ZK2I" target="_blank" rel="noopener">Follow the show <span class="arrow" aria-hidden="true">&rarr;</span></a>
       </div>
     </div>
   </section>
@@ -133,30 +123,32 @@
   <div class="wrap">
     <div class="footer__top">
       <div class="footer__brand">
-        <a class="wordmark" href="index.html">Motheo<span>.</span></a>
-        <p class="footer__tag">A podcast and weekly letter about doing your twenties on purpose.</p>
+        <a class="wordmark" href="index.html" aria-label="Motheo Masole, home">Motheo<span>.</span></a>
+        <p class="footer__tag">A podcast, a weekly letter and a community about doing your twenties on purpose.</p>
       </div>
       <div class="footer__cols">
         <div class="footer__col">
-          <h4>Explore</h4>
+          <h2>Explore</h2>
           <a href="podcast.html">Podcast</a>
           <a href="newsletter.html">Newsletter</a>
+          <a href="community.html">Community</a>
           <a href="about.html">Story</a>
         </div>
         <div class="footer__col">
-          <h4>Elsewhere</h4>
+          <h2>Elsewhere</h2>
+          <a href="https://www.instagram.com/motheomasole/" target="_blank" rel="noopener">Instagram</a>
           <a href="https://open.spotify.com/show/1bjxn4ApzX3vl7Ld07ZK2I" target="_blank" rel="noopener">Spotify</a>
-          <a href="mailto:motheo@motheomasole.com">Email</a>
+          <a href="mailto:motheo@motheomasole.com">motheo@motheomasole.com</a>
         </div>
       </div>
     </div>
     <div class="footer__bottom">
-      <span>&copy; <span data-year>2025</span> Motheo Masole</span>
-      <span>Bath, United Kingdom</span>
+      <span>&copy; <span data-year>2026</span> Motheo Masole &middot; Bath, United Kingdom</span>
+      <span class="footer__legal"><a href="privacy.html">Privacy and cookies</a></span>
     </div>
   </div>
 </footer>
 
-<script src="js/main.js"></script>
+<script src="js/main.js?v=3"></script>
 </body>
 </html>
