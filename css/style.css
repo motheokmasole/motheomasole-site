@@ -277,9 +277,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .hero--blue .btn--ghost:hover { border-color: var(--paper); }
 .hero--blue a:focus-visible { outline-color: var(--paper); }
 .hero__media {
-  position: absolute; bottom: 0; height: 100%;
+  --photo-left: calc(max(0px, (100vw - var(--wrap)) / 2) + var(--gutter) + 21.5rem);
+  position: absolute; bottom: 0;
   /* starts just to the right of the buttons, at any screen width */
-  left: calc(max(0px, (100vw - var(--wrap)) / 2) + var(--gutter) + 21.5rem);
+  left: var(--photo-left);
+  /* full height of the band, but never so large that the face runs off the right edge */
+  height: min(100%, calc((100vw - var(--photo-left) - 1.5rem) / 0.81));
 }
 .hero__media img { height: 100%; width: auto; max-width: none; display: block; }
 
