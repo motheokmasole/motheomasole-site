@@ -260,7 +260,20 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .section--ink .consent { color: #C2C5CB; }
 
 /* ---- Photo band ---- */
-.hero__media img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; display: block; border-radius: 3px; }
+/* Home hero: a full band of the brand blue. The portrait's backdrop is the
+   same blue, so the photo has no visible edges and sits on the band itself. */
+.hero--blue { background: var(--accent); color: var(--paper); padding-bottom: 0; overflow: hidden; }
+.hero__split { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(1.5rem, 4vw, 4rem); align-items: end; }
+.hero--blue .hero__content { padding-bottom: clamp(4rem, 8vw, 6.5rem); align-self: center; }
+.hero--blue .display { font-size: clamp(2.5rem, 4.8vw, 4rem); line-height: 1.03; max-width: 14ch; }
+.hero--blue .hero__coord { color: #A9C9DB; }
+.hero--blue .lead { color: #DCE8EF; }
+.hero--blue .btn--primary { background: var(--pop); color: var(--ink); }
+.hero--blue .btn--primary:hover { background: #FF8266; }
+.hero--blue .btn--ghost { color: var(--paper); border-color: rgba(255,255,255,0.65); }
+.hero--blue .btn--ghost:hover { border-color: var(--paper); }
+.hero--blue a:focus-visible { outline-color: var(--paper); }
+.hero__media img { width: 100%; height: auto; display: block; }
 
 /* ---- Spotify, loaded only when asked ---- */
 .embed-ask { display: grid; gap: 1.1rem; justify-items: start; padding: clamp(1.75rem, 4vw, 2.75rem); }
@@ -292,6 +305,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     padding: 1.75rem var(--gutter) 2.25rem;
   }
   .paths { grid-template-columns: 1fr; }
+  .hero__split { grid-template-columns: 1fr; }
+  .hero--blue .hero__content { padding-bottom: 0; }
+  .hero__media { max-width: 420px; margin-inline: auto; }
   .story-grid { grid-template-columns: 1fr; }
   .portrait { position: static; max-width: 340px; }
 }
