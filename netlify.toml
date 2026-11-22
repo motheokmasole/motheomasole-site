@@ -5,28 +5,8 @@
   NODE_VERSION = "18"
 
 [[redirects]]
-  from = "/api/posts"
-  to = "/.netlify/functions/posts"
-  status = 200
-
-[[redirects]]
-  from = "/api/post"
-  to = "/.netlify/functions/post"
-  status = 200
-
-[[redirects]]
-  from = "/blog"
-  to = "/blog.html"
-  status = 200
-
-[[redirects]]
   from = "/about"
   to = "/about.html"
-  status = 200
-
-[[redirects]]
-  from = "/freebies"
-  to = "/freebies.html"
   status = 200
 
 [[redirects]]
@@ -35,19 +15,64 @@
   status = 200
 
 [[redirects]]
-  from = "/article"
-  to = "/article.html"
-  status = 200
-
-[[redirects]]
   from = "/podcast"
   to = "/podcast.html"
   status = 200
 
 [[redirects]]
-  from = "/contact"
-  to = "/contact.html"
+  from = "/community"
+  to = "/community.html"
   status = 200
+
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy.html"
+  status = 200
+
+[[redirects]]
+  from = "/thank-you"
+  to = "/thank-you.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog"
+  to = "/newsletter"
+  status = 301
+
+[[redirects]]
+  from = "/blog.html"
+  to = "/newsletter"
+  status = 301
+
+[[redirects]]
+  from = "/article"
+  to = "/newsletter"
+  status = 301
+
+[[redirects]]
+  from = "/article.html"
+  to = "/newsletter"
+  status = 301
+
+[[redirects]]
+  from = "/freebies"
+  to = "/community"
+  status = 301
+
+[[redirects]]
+  from = "/freebies.html"
+  to = "/community"
+  status = 301
+
+[[redirects]]
+  from = "/contact"
+  to = "/about"
+  status = 301
+
+[[redirects]]
+  from = "/contact.html"
+  to = "/about"
+  status = 301
 
 [[headers]]
   for = "/*"
