@@ -2,11 +2,12 @@
 <html lang="en-GB">
 <head>
 <meta charset="UTF-8" />
+<meta name="robots" content="noindex" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>You're in | Motheo Masole</title>
-<meta name="description" content="Thanks for confirming your subscription." />
-<meta property="og:title" content="You're in | Motheo Masole" />
-<meta property="og:description" content="Thanks for confirming your subscription." />
+<title>Thank you | Motheo Masole</title>
+<meta name="description" content="Thank you for signing up." />
+<meta property="og:title" content="Thank you | Motheo Masole" />
+<meta property="og:description" content="Thank you for signing up." />
 <meta property="og:image" content="https://motheomasole.com/images/motheo-dark.jpg" />
 <link rel="icon" href="favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
@@ -32,14 +33,30 @@
 </header>
 
 <main id="main">
-  <section class="hero" id="thankyou">
+  <!-- Shown after a newsletter sign-up -->
+  <section class="hero" data-thanks="newsletter">
     <div class="wrap">
-      <p class="hero__coord reveal">Subscription confirmed</p>
+      <p class="hero__coord reveal">WILIOM Wednesdays</p>
       <h1 class="display reveal" style="max-width:14ch;">You&rsquo;re in. Thank you.</h1>
-      <p class="lead hero__sub reveal">Your first letter arrives on Wednesday. If you&rsquo;d like something to listen to before then, the podcast is a good place to start.</p>
+      <p class="lead hero__sub reveal">Your first letter arrives on Wednesday. Keep an eye on your inbox, and if a confirmation email shows up, click the link in it so the letters reach you.</p>
+      <p class="lead hero__sub reveal">If you&rsquo;d like something to listen to before then, the podcast is a good place to start.</p>
       <div class="hero__actions reveal">
         <a class="btn btn--primary" href="podcast.html">Listen to the show <span class="arrow" aria-hidden="true">&rarr;</span></a>
         <a class="btn btn--ghost" href="community.html">See the community</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shown after a community waitlist sign-up (thank-you.html#waitlist) -->
+  <section class="hero" data-thanks="waitlist" hidden>
+    <div class="wrap">
+      <p class="hero__coord reveal">Intentional High Achievers</p>
+      <h1 class="display reveal" style="max-width:14ch;">You&rsquo;re on the waitlist.</h1>
+      <p class="lead hero__sub reveal">Thank you for joining early. You&rsquo;ll get an email from me as soon as the doors open, and you&rsquo;ll be one of the first people in.</p>
+      <p class="lead hero__sub reveal">Until then you&rsquo;ll get my weekly letter every Wednesday, and the podcast is a good place to start.</p>
+      <div class="hero__actions reveal">
+        <a class="btn btn--primary" href="podcast.html">Listen to the show <span class="arrow" aria-hidden="true">&rarr;</span></a>
+        <a class="btn btn--ghost" href="about.html">Read my story</a>
       </div>
     </div>
   </section>
@@ -75,6 +92,6 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=3"></script>
+<script src="js/main.js?v=4"></script>
 </body>
 </html>

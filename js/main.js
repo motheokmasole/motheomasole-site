@@ -33,6 +33,14 @@
   });
 })();
 
+/* -- Thank-you page: show the message for the list they joined -- */
+(function () {
+  var blocks = document.querySelectorAll('[data-thanks]');
+  if (!blocks.length) return;
+  var which = (window.location.hash === '#waitlist') ? 'waitlist' : 'newsletter';
+  blocks.forEach(function (b) { b.hidden = (b.getAttribute('data-thanks') !== which); });
+})();
+
 /* -- Scroll reveal -- */
 (function () {
   var items = document.querySelectorAll('.reveal');
@@ -91,6 +99,8 @@
       .then(function () {
         form.reset();
         say(form.getAttribute('data-success') || 'You\u2019re in. Check your inbox to confirm your first Wednesday.', 'ok');
+        // then take them to the thank-you page for the list they joined
+        window.location.href = 'thank-you.html' + ((form.getAttribute('data-list') === 'iha') ? '#waitlist' : '');
       })
       .catch(function () {
         say('Something went wrong and you haven\u2019t been added yet. Try again in a moment.', 'err');
